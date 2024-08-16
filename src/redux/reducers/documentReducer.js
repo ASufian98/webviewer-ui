@@ -46,6 +46,8 @@ export default (initialState) => (state = initialState, action) => {
       return { ...state, defaultPrintOptions: payload.options };
     case 'SET_LOADING_PROGRESS':
       return { ...state, loadingProgress: payload.progress };
+    case 'SET_SIGNATURE_BUTTON':
+      return { ...state, signatureButton: payload.signatureButton };
     default:
       return state;
   }

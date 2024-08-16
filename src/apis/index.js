@@ -309,6 +309,7 @@ import importModularComponents from './importModularComponents';
 import setScaleOverlayPosition from './setScaleOverlayPosition';
 import setPanels from './setPanels';
 import getPanels from './getPanels';
+import setCreateSignatureButton from './setCreateSignatureButton';
 
 export default (store) => {
   const CORE_NAMESPACE = 'Core';
@@ -406,6 +407,7 @@ export default (store) => {
     setFontPath,
     getFontPath,
     setPrintQuality: setPrintQuality(store),
+    setCreateSignatureButton: setCreateSignatureButton(store),
     setDefaultPrintOptions: setDefaultPrintOptions(store),
     setNotesPanelSortStrategy: setNotesPanelSortStrategy(store),
     setSwipeOrientation,

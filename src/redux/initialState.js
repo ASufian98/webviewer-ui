@@ -2144,6 +2144,7 @@ export default {
     portfolio: [],
     layers: [],
     printQuality: 1,
+    signatureButton: true,
     passwordAttempts: -1,
     maxPasswordAttempts: 3,
     loadingProgress: 0,

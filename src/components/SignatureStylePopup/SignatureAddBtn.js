@@ -11,6 +11,9 @@ import './SignatureStylePopup.scss';
 
 const SignatureAddBtn = ({ t, disabled }) => {
   const dispatch = useDispatch();
+  const signatureButton = useSelector(state => selectors.getSignatureButton(state));
+
+  if (!signatureButton) return null; // This line will check the condition and return null if false
 
   const openSignatureModal = () => {
     if (!disabled) {
@@ -20,21 +23,21 @@ const SignatureAddBtn = ({ t, disabled }) => {
     }
   };
 
-  const isInitialsModeEnabled = useSelector((state) => selectors.getIsInitialsModeEnabled(state));
-  const buttonText = isInitialsModeEnabled ? t('option.signatureOverlay.addSignatureOrInitials') : t('option.signatureOverlay.addSignature');
+  const isInitialsModeEnabled = useSelector(state => selectors.getIsInitialsModeEnabled(state));
+  const buttonText = isInitialsModeEnabled
+    ? t('option.signatureOverlay.addSignatureOrInitials')
+    : t('option.signatureOverlay.addSignature');
 
   return (
-    null
-    // <button
-    //   className={classNames(
-    //     'signature-row-content add-btn',
-    //     { disabled },
-    //   )}
-    //   onClick={openSignatureModal}
-    // >
-    //   <Icon className="signature-button-icon" glyph={disabled ? 'icon-signature-plus-disabled' : 'icon-signature-plus-sign'} />
-    //   <div className="btn-text" title={buttonText}>{buttonText}</div>
-    // </button>
+    <button className={classNames('signature-row-content add-btn', { disabled })} onClick={openSignatureModal}>
+      <Icon
+        className="signature-button-icon"
+        glyph={disabled ? 'icon-signature-plus-disabled' : 'icon-signature-plus-sign'}
+      />
+      <div className="btn-text" title={buttonText}>
+        {buttonText}
+      </div>
+    </button>
   );
 };
 

@@ -573,6 +573,10 @@ export const setPrintQuality = (quality) => ({
   type: 'SET_PRINT_QUALITY',
   payload: { quality },
 });
+export const setSignatureButton = (signatureButton) => ({
+  type: 'SET_SIGNATURE_BUTTON',
+  payload: { signatureButton },
+})
 export const setDefaultPrintOptions = (options) => ({
   type: 'SET_DEFAULT_PRINT_OPTIONS',
   payload: { options },
