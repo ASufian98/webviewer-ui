@@ -24,16 +24,17 @@ const SignatureAddBtn = ({ t, disabled }) => {
   const buttonText = isInitialsModeEnabled ? t('option.signatureOverlay.addSignatureOrInitials') : t('option.signatureOverlay.addSignature');
 
   return (
-    <button
-      className={classNames(
-        'signature-row-content add-btn',
-        { disabled },
-      )}
-      onClick={openSignatureModal}
-    >
-      <Icon className="signature-button-icon" glyph={disabled ? 'icon-signature-plus-disabled' : 'icon-signature-plus-sign'} />
-      <div className="btn-text" title={buttonText}>{buttonText}</div>
-    </button>
+    null
+    // <button
+    //   className={classNames(
+    //     'signature-row-content add-btn',
+    //     { disabled },
+    //   )}
+    //   onClick={openSignatureModal}
+    // >
+    //   <Icon className="signature-button-icon" glyph={disabled ? 'icon-signature-plus-disabled' : 'icon-signature-plus-sign'} />
+    //   <div className="btn-text" title={buttonText}>{buttonText}</div>
+    // </button>
   );
 };
 
